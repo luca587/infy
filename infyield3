@@ -1,0 +1,17 @@
+-- Create a red button and parent it to the GUI
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0, 100, 0, 50)
+button.Position = UDim2.new(0.5, -50, 0.5, -25)
+button.Text = "Get Infinite Yield"
+button.BackgroundColor3 = Color3.new(1, 0, 0)
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Function to execute the script and remove the button
+local function getInfiniteYield()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    button:Destroy()
+end
+
+-- Connect the button to the function
+button.MouseButton1Click:Connect(getInfiniteYield)
